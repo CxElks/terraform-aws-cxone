@@ -478,7 +478,7 @@ module "minio_gateway_nodes" {
   cluster_name    = local.deployment_id
   cluster_version = var.eks_cluster_version
 
-  vpc_id     = local.vpc_id
+  
   subnet_ids = local.subnets
 
   cluster_primary_security_group_id = module.eks.cluster_primary_security_group_id
