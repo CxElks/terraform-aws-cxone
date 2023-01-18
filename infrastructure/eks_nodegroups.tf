@@ -71,7 +71,7 @@ module "ast_sast_engines" {
   subnet_ids = local.subnets
 
   cluster_primary_security_group_id = module.eks.cluster_primary_security_group_id
-  cluster_security_group_id         = module.eks.cluster_security_group_id
+  vpc_security_group_ids         = [module.eks.cluster_security_group_id]
 
   min_size     = var.sast_nodes.min_size
   max_size     = var.sast_nodes.max_size
@@ -210,7 +210,7 @@ module "ast_sast_large_engines" {
   subnet_ids = local.subnets
 
   cluster_primary_security_group_id = module.eks.cluster_primary_security_group_id
-  cluster_security_group_id         = module.eks.cluster_security_group_id
+  vpc_security_group_ids         = [module.eks.cluster_security_group_id]
 
   min_size     = var.sast_nodes_large.min_size
   max_size     = var.sast_nodes_large.max_size
@@ -279,7 +279,7 @@ module "ast_sast_extra_large_engines" {
   subnet_ids = local.subnets
 
   cluster_primary_security_group_id = module.eks.cluster_primary_security_group_id
-  cluster_security_group_id         = module.eks.cluster_security_group_id
+  vpc_security_group_ids         = [module.eks.cluster_security_group_id]
 
   min_size     = var.sast_nodes_extra_large.min_size
   max_size     = var.sast_nodes_extra_large.max_size
@@ -346,7 +346,7 @@ module "ast_sast_xxl_engines" {
   subnet_ids = local.subnets
 
   cluster_primary_security_group_id = module.eks.cluster_primary_security_group_id
-  cluster_security_group_id         = module.eks.cluster_security_group_id
+  vpc_security_group_ids         = [module.eks.cluster_security_group_id]
 
   min_size     = var.sast_nodes_xxl.min_size
   max_size     = var.sast_nodes_xxl.max_size
@@ -414,7 +414,7 @@ module "kics_nodes_engines" {
   subnet_ids = local.subnets
 
   cluster_primary_security_group_id = module.eks.cluster_primary_security_group_id
-  cluster_security_group_id         = module.eks.cluster_security_group_id
+  vpc_security_group_ids         = [module.eks.cluster_security_group_id]
 
   min_size     = var.kics_nodes.min_size
   max_size     = var.kics_nodes.max_size
@@ -482,7 +482,7 @@ module "minio_gateway_nodes" {
   subnet_ids = local.subnets
 
   cluster_primary_security_group_id = module.eks.cluster_primary_security_group_id
-  cluster_security_group_id         = module.eks.cluster_security_group_id
+  vpc_security_group_ids         = [module.eks.cluster_security_group_id]
 
   min_size     = var.minio_gateway_nodes.min_size
   max_size     = var.minio_gateway_nodes.max_size
@@ -549,7 +549,7 @@ module "repostore_nodes" {
   subnet_ids = local.subnets
 
   cluster_primary_security_group_id = module.eks.cluster_primary_security_group_id
-  cluster_security_group_id         = module.eks.cluster_security_group_id
+  vpc_security_group_ids         = [module.eks.cluster_security_group_id]
 
   min_size     = var.repostore_nodes.min_size
   max_size     = var.repostore_nodes.max_size
